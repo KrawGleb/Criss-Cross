@@ -1,0 +1,61 @@
+﻿@model CrissCross.Models.Field
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Крестики нолики</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div style="margin:0; position:absolute;
+                transform:translate(-50%,50%);
+                left: 50%; margin-right: -50%;">
+        @using (Html.BeginForm("HandleButtonClick", "Home"))
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+        <button type="submit"
+                name="id"
+                value=@(i.ToString() + j.ToString())
+                style="width: 160px; height: 160px; font-size:50px; background-color:@Model.background[i,j]"
+                class="btn btn-light">
+            @Model.field[i, j]
+        </button>
+
+                }
+                <br />
+            }
+        }
+      
+    <table>
+        <tr>
+            <td>
+                @using (Html.BeginForm("NewGame", "Home"))
+                {
+                    <button type="submit"
+                            class="btn btn-light"
+                            style="width: 160px; height: 80px; font-size:23px">
+                        Новая игра
+                    </button>
+                }
+                </td>
+            <td>
+                @using (Html.BeginForm("SwipeSide", "Home"))
+                {
+                    <button type="submit"
+                            class="btn btn-light"
+                            style="width: 160px; height: 80px; font-size:23px">
+                        Играть за @Model.CompSide
+                    </button>
+                }
+            </td>
+            </tr>
+    </table>
+
+    </div>
+</body>
+</html>
