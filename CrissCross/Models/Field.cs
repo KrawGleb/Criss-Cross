@@ -6,6 +6,7 @@ namespace CrissCross.Models
     {
         public char PlayerSide = 'X';
         public char CompSide = 'O';
+        public bool IsFieldClear = true;
 
         public char[,] field =
         {
