@@ -2,20 +2,20 @@
 
 namespace CrissCross.Models
 {
-    public class Field
+    public class GameData
     {
-        public char PlayerSide = 'X';
-        public char CompSide = 'O';
-        public bool IsFieldClear = true;
+        public char _playerSide = 'X';
+        public char _compSide = 'O';
+        public bool _isFieldClear = true;
 
-        public char[,] field =
+        public char[,] _field =
         {
             {' ', ' ', ' ' },
             {' ', ' ', ' ' },
             {' ', ' ', ' ' }
         };
 
-        public string[,] background =
+        public string[,] _background =
         {
             {"#f8f9fa", "#f8f9fa", "#f8f9fa" },
             {"#f8f9fa", "#f8f9fa", "#f8f9fa" },
